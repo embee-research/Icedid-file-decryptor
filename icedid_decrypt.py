@@ -57,7 +57,7 @@ rawkey = bytes(enc[-16:])
 key = [0 for i in range(4)]
 for i in range(4):
 
-    #Unpack the key structure?
+    #Unpack the key structure
     temp = struct.unpack('<I', rawkey[i*4:i*4+4])
     #get first value since struct returns tuples
     key[i] = temp[0]
@@ -77,7 +77,7 @@ for count in range(maxLen):
 
 
 
-#look for strings/c2's in the restult
+#look for strings/c2's in the result
 strings_re = re.findall("[a-zA-Z0-9\.\-]{10,}", str(decoded))
 
 out = ""
